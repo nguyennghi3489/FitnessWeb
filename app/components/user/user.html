@@ -1,0 +1,162 @@
+<section class="user-signup">
+	<div class="container">
+		<h1>Update Your Information</h1>
+		<div id="demo-basic" ></div>
+		<form class="upload-form" (submit)="upload($event, fileUpload.value)" action="/upload" enctype="multipart/form-data">
+		  <input type="file" id="upload-input" (change)="selectFile($event)">
+		</form>
+		<label>Upload Your Avatar</label>
+		<button class="upload-button btn btn-primary" (click)="openFile()">Upload</button>
+		<form (ngSubmit)="updateUserInformation(form.value)" [ngFormModel]="form">
+		  <div class="form-group">
+			<label for="exampleInputEmail1">Nationality</label>
+			<input id="country_selector" type="text">
+			<label for="country_selector" style="display:none;">Select a country here...</label>
+		  </div>
+		  <div class="form-group">
+		    <label for="level">Gender</label>
+		    	<div class="row" #gender="ngForm" ngControlGroup="gender">
+			    	<div class="col-md-2">
+			    		<div class="radio">
+						  <label>
+						    <input type="radio" name="gender" ngControl="male" >
+						    Male
+						  </label>
+						</div>
+					</div>
+					<div class="col-md-2">
+			    		<div class="radio">
+						  <label>
+						    <input type="radio" name="gender" ngControl="female">
+						    Female
+						  </label>
+						</div>
+					</div>
+				</div>
+				<div *ngIf="!gender.valid" class="error">
+				    You must choose your Gender
+				</div>
+			</div>
+		  <div class="form-group">
+		    <label for="exampleInputEmail1">Quotes</label>
+		    <input type="text" ngControl="quotes" class="form-control" id="exampleInputEmail1" placeholder="Quotes" #quotes="ngForm">
+		    <div *ngIf="!quotes.valid" class="error">
+			    You must input your Quotes
+			</div>
+		  </div>
+		  <div class="form-group">
+		    <label for="exampleInputPassword1">Description</label>
+		    <textarea id="trumbowyg-demo" #description="ngForm" ngControl="description"></textarea>
+		    <div *ngIf="!description.valid" class="error">
+			    You must input your Description
+			</div>
+		  </div>
+		  <div class="form-group">
+		    <label for="level">Choose Your Major</label>
+		    	<div class="row" #major="ngForm" ngControlGroup="major">
+			    	<div class="col-md-6">
+			    		<div class="checkbox">
+						  <label>
+						    <input type="checkbox" ngControl="Aerobics">
+						    Aerobics
+						  </label>
+						</div>
+						<div class="checkbox">
+						  <label>
+						    <input type="checkbox" ngControl="Boxing">
+						    Boxing
+						  </label>
+						</div>
+						<div class="checkbox">
+						  <label> 
+						    <input type="checkbox" ngControl="BrazillianJiuJitsu">
+						    Brazillian Jiu Jitsu
+						  </label>
+						</div>
+						<div class="checkbox">
+						  <label> 
+						    <input type="checkbox" ngControl="Cardiovascular">
+						    Cardiovascular
+						  </label>
+						</div>
+						<div class="checkbox">
+						  <label> 
+						    <input type="checkbox" ngControl="CircuitTraining">
+						    Circuit Training
+						  </label>
+						</div>
+						<div class="checkbox">
+						  <label> 
+						    <input type="checkbox" ngControl="Conditioning">
+						    Conditioning
+						  </label>
+						</div>
+						<div class="checkbox">
+						  <label> 
+						    <input type="checkbox" ngControl="Crossfit">
+						    Crossfit
+						  </label>
+						</div>
+						<div class="checkbox">
+						  <label>
+						    <input type="checkbox" ngControl="KickBoxing">
+						    Kick Boxing
+						  </label>
+						</div>
+			    	</div>
+	  				<div class="col-md-6">
+						<div class="checkbox">
+						  <label>
+						    <input type="checkbox" ngControl="MartialArt">
+						    Martial Art
+						  </label>
+						</div>
+						<div class="checkbox">
+						  <label> 
+						    <input type="checkbox" ngControl="Pilates">
+						    Pilates
+						  </label>
+						</div>
+						<div class="checkbox">
+						  <label> 
+						    <input type="checkbox" ngControl="Spinning">
+						    Spinning
+						  </label>
+						</div>
+						<div class="checkbox">
+						  <label> 
+						    <input type="checkbox" ngControl="StrengthTraining">
+						    Strength Training
+						  </label>
+						</div>
+						<div class="checkbox">
+						  <label> 
+						    <input type="checkbox" ngControl="WeightTraining">
+						    Weight Training
+						  </label>
+						</div>
+						<div class="checkbox">
+						  <label> 
+						    <input type="checkbox" ngControl="Yoga">
+						    Yoga
+						  </label>
+						</div>
+						<div class="checkbox">
+						  <label> 
+						    <input type="checkbox" ngControl="Zumba">
+						    Zumba
+						  </label>
+						</div>
+	  				</div>
+	  				<div *ngIf="!major.valid" class="error">
+			    You must input your Major
+			    </div>
+		    	</div>
+
+		    	
+			
+		  </div>
+		  <button type="submit" [disabled]="!form.valid" class="btn btn-success pull-right">Submit</button>
+		</form>
+	</div>
+</section>

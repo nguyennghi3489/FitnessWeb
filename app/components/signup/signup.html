@@ -1,0 +1,55 @@
+<section class="user-signup">
+	<div class="container">
+		<h1>Sign Up To be Trainer</h1>
+		<form (ngSubmit)="signup(form.value)" [ngFormModel]="form">
+		  <div class="form-group">
+		    <label for="firstname">First Name</label>
+		    <input type="text" ngControl="firstname" class="form-control" id="firstname" placeholder="First Name" #firstname="ngForm">
+		    <div *ngIf="firstname.errors && firstname.touched" class="error">
+			    You must input your First Name
+			</div>
+		  </div>
+		  <div class="form-group">
+		    <label for="lastname">Last Name</label>
+		    <input type="text" ngControl="lastname" class="form-control" id="lastname" placeholder="Last Name" #lastname="ngForm">
+		    <div *ngIf="lastname.errors && lastname.touched" class="error">
+			    You must input your Last Name
+			</div>
+		  </div>
+		  <div class="form-group">
+		    <label for="email">Email</label>
+		    <input type="text"  ngControl="email" class="form-control" id="email" placeholder="Email" #email="ngForm" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" (blur)="resetEmailError()">
+		    <div *ngIf="email.errors?.required && email.touched" class="error">
+			    You must input your Email
+			</div>
+			<div *ngIf="email.errors?.pattern && email.touched" class="error">
+			    You must input correct format
+			</div>
+			<div *ngIf="emailExistFlag" class="error">
+			    Email is existed
+			</div>
+		  </div>
+		  <div class="form-group">
+		    <label for="password">Password</label>
+		    <input type="password" ngControl="password" class="form-control" id="password" placeholder="Password" #password="ngForm">
+		    <div class="error">
+		    	<p *ngIf="password.errors?.minlength && password.touched">
+			       Your password needs to be at least 8 characters.
+			    </p>
+			    <p *ngIf="password.errors?.required && password.touched">
+				    You must input your Password
+				</p>
+			</div>
+		  </div>
+		  <div class="form-group">
+		    <label for="confirmpassword">Confirm Password</label>
+		    <input type="password" ngControl="confirmpassword" class="form-control" id="confirmpassword" placeholder="Confirm Password" #confirmpassword="ngForm" (blur)="checkConfirm()">
+		    <div *ngIf="confirmpassword.errors && confirmPasswordCheckFlag" class="error">
+			    Confirm Password different with Password
+			</div>
+
+		  </div>
+		  <button type="submit" [disabled]="!form.valid" class="btn btn-success pull-right">Submit</button>
+		</form>
+	</div>
+</section>

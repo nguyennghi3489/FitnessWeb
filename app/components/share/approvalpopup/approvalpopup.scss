@@ -1,0 +1,39 @@
+.overlay{
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	background:rgba(0,0,0,0.7);
+	z-index:10;
+}
+.popup{
+	position:absolute;
+	color:red;
+	z-index:100;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	>.content{
+		background:white;
+		position:relative;
+		padding:10px 20px;
+		>h1{
+			font-size:25px;
+			color:black;
+			margin-top:0;
+    		border-bottom: 1px solid #ccc;
+    		padding-bottom: 5px;
+		}
+		>p{
+			font-size:16px;
+			color:black;
+			padding:10px 0;
+		}
+		>button{
+			position:absolute;
+			top:5px;
+			right:5px;
+		}
+	}
+}

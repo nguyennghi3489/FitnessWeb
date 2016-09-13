@@ -1,0 +1,20 @@
+<div class="container">
+  <form (ngSubmit)="onSubmit(form.value)" [ngFormModel]="form">
+    <label for="email" class="sr-only">Email address</label>
+    <input name="email" type="email" ngControl="email" #email="ngForm">
+    <div *ngIf="email.errors?.required && email.touched">Need input this field</div>
+   
+    <label for="password" class="sr-only">Password address</label>
+    <input name="password" type="password" ngControl="password" #password="ngForm">
+    <div *ngIf="password.errors?.required && password.touched">Need input this field</div>
+    
+    <div class="checkbox">
+      <label>
+      <input type="checkbox" ngControl="remember" value="remember-me"> Remember me
+      </label>
+    </div>
+
+    <button class="btn btn-lg btn-primary btn-block" [disabled]="!form.valid" type="submit">Sign in</button>
+  </form>
+  <a [routerLink]="['../Signup']">Register</a>
+</div>

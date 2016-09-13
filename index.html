@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>Fitness Trainer</title>
+		<base href="/">
+		<script src='js/lib/angular2/es6-shim.min.js'></script>
+		<script src='js/lib/angular2/system-polyfills.js'></script>
+		<script src='js/lib/angular2/angular2-polyfills.js'></script>
+		<script src='js/lib/angular2/system.src.js'></script>
+		<script src='js/lib/angular2/Rx.js'></script>
+		<script src='js/lib/angular2/angular2.dev.js'></script>
+		<script src='js/lib/angular2/router.dev.js'></script>
+		<script src='js/lib/angular2/http.dev.js'></script>
+		<script src="js/lib/angular2/typescript.js"></script>
+
+		
+		<script src="js/lib/jquery/jquery.js"></script>
+		<link href="js/lib/bootstrap/bootstrap.css" rel="stylesheet">
+		<script src="js/lib/bootstrap/bootstrap.js"></script>
+		<link href="js/lib/plugin/croppie.css" rel="stylesheet">
+		<script src="js/lib/plugin/croppie.js"></script>
+		<link href="js/lib/plugin/trumbowyg.css" rel="stylesheet">
+		<script src="js/lib/plugin/trumbowyg.js"></script>
+		<link href="js/lib/plugin/countrySelect.css" rel="stylesheet">
+		<script src="js/lib/plugin/countrySelect.js"></script>
+		<script src="js/lib/bootstrap-datetimepicker/moment.js"></script>
+		<script src="js/lib/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+		<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDy8q9NpKcXU2W1fa7dApzXa_auex1eJQI&libraries=places" async defer></script>
+  
+		<link href="js/lib/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet">
+		<script>
+			System.config({
+				transpiler: 'typescript', 
+        		typescriptOptions: { emitDecoratorMetadata: true }, 
+				packages:{
+					'app': {defaultExtension: 'ts'}
+				},
+				map: {
+			      moment: 'node_modules/ng2-bootstrap/node_modules/moment/moment.js'
+			    }
+			});
+			System.import('app/boot.ts')
+				.then(null, console.error.bind(console));
+		</script>
+	</head>
+	<body style="position:relative">
+		<my-app></my-app>
+	</body>
+</html>
