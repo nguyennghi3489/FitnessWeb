@@ -13,7 +13,7 @@ export class AuthenticationService{
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
     
-    return this.http.get('http://localhost:3000/api/checkEmailExist?email='+ email, { headers: headers })
+    return this.http.get('http://52.43.102.187:3000/api/checkEmailExist?email='+ email, { headers: headers })
       .map(res => res.json());
   }
 
@@ -24,7 +24,7 @@ export class AuthenticationService{
     	var dataJson = JSON.stringify(data);
 
     	console.log(dataJson);
-		return this.http.post('http://localhost:3000/api/authenticate', dataJson, { headers: headers })
+		return this.http.post('http://52.43.102.187:3000/api/authenticate', dataJson, { headers: headers })
 		  .map(res => res.json());
 	}
 
@@ -33,7 +33,7 @@ export class AuthenticationService{
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
 
-    return this.http.post('http://localhost:3000/api/user/signup', data, options)
+    return this.http.post('http://52.43.102.187:3000/api/user/signup', data, options)
       .map(res => res.json())
   }
 
@@ -42,7 +42,7 @@ export class AuthenticationService{
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
 
-    return this.http.put('http://localhost:3000/api/trainer', data, options)
+    return this.http.put('http://52.43.102.187:3000/api/trainer', data, options)
       .map(res => res.json());
   }
 
@@ -52,7 +52,7 @@ export class AuthenticationService{
     let options = new RequestOptions({ headers: headers });
     console.log("UPLOAD IMAGE");
     console.log(data);
-    return this.http.post('http://localhost:3000/api/avatarUpload', data, options)
+    return this.http.post('http://52.43.102.187:3000/api/avatarUpload', data, options)
       .map(res => res.json());
   }
 }
