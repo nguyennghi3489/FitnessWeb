@@ -15,7 +15,7 @@ export class ActivityService{
         let options = new RequestOptions({ headers: headers });
         console.log(data);
         console.log("CALLED");
-        return this.http.post('http://52.43.102.187:3000/api/activity', data, options)
+        return this.http.post('http://52.40.15.203:3000/api/activity', data, options)
         .map(res => res.json());
 
     }
