@@ -8,12 +8,12 @@
   },
   "author": "NguyenNghi3489",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "jquery": "~1.12.0",
-    "bootstrap-sass": "~3.3.1",
+    "bootstrap-sass": "3.3.0",
     "typescript": "1.8.9",
     "angular2": "2.0.0-beta.17",
-    "systemjs": "0.19.22",
+    "systemjs": "0.19.38",
     "es6-promise": "^3.0.2",
     "es6-shim": "^0.35.0",
     "reflect-metadata": "0.1.2",
@@ -29,12 +29,5 @@
     "country-select-js": "^1.0.8",
     "eonasdan-bootstrap-datetimepicker":"4.17.42",
     "moment": "2.9.0"
-  },
-  "dependencies": {
-    "@angular/common": "^2.0.0-rc.4",
-    "@angular/compiler": "^2.0.0-rc.4",
-    "@angular/core": "^2.0.0-rc.4",
-    "@angular/forms": "^0.2.0",
-    "ng2-bootstrap": "^1.0.24"
   }
 }
