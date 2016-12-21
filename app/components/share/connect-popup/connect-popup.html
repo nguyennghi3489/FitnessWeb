@@ -1,0 +1,13 @@
+<div class="popup">
+	<div class="content">
+		<div class="title">
+		<h3><i class="fa fa-user" aria-hidden="true"></i>{{item.fullname}}</h3>
+		<p>Want to join this activity, begin connect with this member</p>
+		</div>
+		<p><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:{{item.email}}">Email Now</a></p>
+		<p><i class="fa fa-facebook-official" aria-hidden="true"></i><a target="_blank" [href]="item.link">Facebook Link</a></p>
+		<button class="btn btn-primary" (click)="approve(item.id);">Approve</button>
+	</div>
+</div>
+
+<div class="overlay"></div>

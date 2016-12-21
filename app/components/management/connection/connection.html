@@ -1,0 +1,27 @@
+<h1 class="page-header">Dashboard</h1>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Full Name</th>
+          <th>Activity</th>
+          <th>Message</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="#value of activities">
+          <!-- <td>{{value.id}}</td> -->
+          <td>{{value.fullname}}</td>
+          <td>{{value.activityTitle}}</td>
+          <td>{{value.message}}</td>
+          <td>{{convertDate(value.datetime) | date:'dd-M-yyyy H:mm'}}</td>
+          <td><button (click)="edit(value)"class="btn btn-default">Connect</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>    
+<my-popup #popup1></my-popup>

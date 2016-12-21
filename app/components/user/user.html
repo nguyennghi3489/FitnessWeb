@@ -38,10 +38,10 @@
 				</div>
 			</div>
 		  <div class="form-group">
-		    <label for="exampleInputEmail1">Quotes</label>
-		    <input type="text" ngControl="quotes" class="form-control" id="exampleInputEmail1" placeholder="Quotes" #quotes="ngForm">
-		    <div *ngIf="!quotes.valid" class="error">
-			    You must input your Quotes
+		    <label for="exampleInputEmail1">Quote</label>
+		    <input type="text" ngControl="quote" class="form-control" id="exampleInputEmail1" placeholder="Your Quote" #quote="ngForm">
+		    <div *ngIf="!quote.valid" class="error">
+			    You must input your quote
 			</div>
 		  </div>
 		  <div class="form-group">

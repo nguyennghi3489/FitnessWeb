@@ -28,7 +28,7 @@ gulp.task('copyLibs',function(){
 	gulp.src(
 		'node_modules/bootstrap-sass/assets/stylesheets/*.scss')
 		.pipe(sass())
-		.pipe(gulp.dest(appSrc+ 'js/lib/bootstrap'));
+		.pipe(gulp.dest(appSrc+ 'js/lib/'));
 
 	gulp.src(
 		'node_modules/bootstrap-sass/assets/javascripts/bootstrap.js')

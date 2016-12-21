@@ -26,6 +26,8 @@ export class LoginComponent{
 		});
 	}
 	onSubmit(value){
+		console.log("HELLOLOO");
+					console.log(value);
 		this.authenticationService.login(value).subscribe(
 			data => {
 				if(data.success){
@@ -34,6 +36,7 @@ export class LoginComponent{
 		              localStorage.setItem('password', this.form.controls.password.value);
 		            }
 					let authentication = new Authentication(data);
+
 					this.utilities.setCookie('authentication', JSON.stringify(authentication), 60);
 					this.router.navigate(['../Management']);
 				}

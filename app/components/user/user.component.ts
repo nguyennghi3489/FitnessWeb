@@ -26,7 +26,7 @@ export class UserComponent{
 		this.imageData = {};
 		
 	    this.form = this.formBuilder.group({  
-	      "quotes": ['', Validators.required],
+	      "quote": ['', Validators.required],
 	      "description": ['', Validators.required],
 	      "major": this.formBuilder.group({
 	      	'Aerobics': this.formBuilder.control(null),
@@ -91,8 +91,7 @@ export class UserComponent{
 			$('#trumbowyg-demo').on('tbwblur', function(){ 
 				var newvalue = $('#trumbowyg-demo').trumbowyg('html');
 				that.form.controls.description._touched = true;
-				that.form.controls.description.updateValue(newvalue);
-				
+				that.form.controls.description.updateValue(newvalue);		
 			});
 
 			$("#country_selector").countrySelect({
@@ -106,7 +105,7 @@ export class UserComponent{
 			    enableOrientation: true
 			});	
 	}
-
+	
 	crop(id){
 		var that = this;
     	this.vanilla.result('canvas').then(function(base64Image) {
@@ -129,7 +128,9 @@ export class UserComponent{
 			var data = new AuthenticationData(this.authenticationService.authenticationTempData);
 			var extraInfo = {};
 			extraInfo.gender = this.utilities.getOneValueFromCheckbox(this.form.controls["gender"]);
-			extraInfo.quotes = this.form.value.quotes;
+			extraInfo.quote = this.form.value.quote;
+			console.log('-----check here--------');
+			console.log(this.form.value);
 			extraInfo.description = this.form.value.description;
 			extraInfo.major =this.utilities.getValueFromCheckbox(this.form.controls["major"]);
 			//extraInfo.major = this.utilities.getValueFromCheckbox(this.form.controls["major"]);

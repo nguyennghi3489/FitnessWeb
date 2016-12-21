@@ -25,6 +25,7 @@ export class Utilities {
 	    var d = new Date();
 	    d.setTime(d.getTime() + (exdays*60*1000));
 	    var expires = "expires="+d.toUTCString();
+	    console.log("SET COOKIE");
 	    document.cookie = cname + "=" + cvalue + "; " + expires;
 	}
 

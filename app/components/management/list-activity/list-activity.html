@@ -1,0 +1,26 @@
+<h1 class="page-header">Dashboard</h1>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Time</th>
+          <th>Type</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="#value of activities">
+          <td>{{value.title}}</td>
+          <td>{{convertDate(value.datetime) | date:'dd-M-yyyy H:mm'}}</td>
+          <td>{{value.type}}</td>
+          <td>{{value._id}}</td>
+          <td><button (click)="edit(value.id)"class="btn btn-default">Edit</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>    

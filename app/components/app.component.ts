@@ -7,6 +7,7 @@ import {PopupComponent} from '/app/components/share/popup/popup.component';
 import {DemoComponent} from '/app/components/share/demo/demo.component';
 import {ManagementComponent} from '/app/components/management/management.component';
 import {ApprovalPopupComponent} from '/app/components/share/approvalpopup/approvalpopup.component';
+import {ConnectPopupComponent} from '/app/components/share/connect-popup/connect-popup.component';
 import { Utilities } from '/app/utilities/utilities.ts';
 import { RouteConfig, Router, ROUTER_DIRECTIVES } from 'angular2/router';
 
@@ -33,6 +34,11 @@ export class AppComponent implements AfterViewInit{
 
     openDialogBox(){
         this.popupChild.createDialog(ApprovalPopupComponent);
+        $('body').css('overflow','hidden');
+    }
+
+    openConnectBox(){
+        this.popupChild.createDialog(ConnectPopupComponent);
         $('body').css('overflow','hidden');
     }
 }

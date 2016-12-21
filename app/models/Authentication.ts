@@ -24,7 +24,7 @@ export class AuthenticationData {
   baseImageUrl: string;
   nationality: string;
   major: [string];
-  quotes: string;
+  quote: string;
   description: string;
   constructor(data){
     console.log(data);
@@ -38,7 +38,7 @@ export class AuthenticationData {
     this.baseImageUrl = data.baseImageUrl || null;
     this.nationality = data.nationality;
     this.major = data.major;
-    this.quotes = data.quotes;
+    this.quote = data.quote;
     this.description = data.description;
     this.gender = data.gender || null;
   }

@@ -32,4 +32,24 @@ export class PopupComponent{
         return componentCreated;
     }
 
+    createDialogWithParam(dialogComponent, obj):Promise<ComponentRef<DemoComponent>>
+    {
+        this.viewContainer.clear();
+
+        let componentCreated = this.componentResolver
+            .resolveComponent(dialogComponent)
+            .then((dialogComponentFactory) => {
+                let view = this.viewContainer.createComponent(dialogComponentFactory);
+                view.instance.item = obj;
+                return view;
+            });
+
+        componentCreated.then((dialogComponentRef) => {
+            dialogComponentRef.instance.click1.subscribe(() => {
+                dialogComponentRef.destroy();
+            });
+        });
+        return componentCreated;
+    }
+
 }

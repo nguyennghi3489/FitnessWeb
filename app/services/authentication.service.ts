@@ -6,14 +6,14 @@ import { AuthenticationData } from '/app/models/Authentication';
 export class AuthenticationService{
   authenticationTempData : AuthenticationData;
 	constructor(public http: Http){
-
+    console.log("FIRST");
 	}
 
   checkEmailExist(email){
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
     
-    return this.http.get('http://52.40.15.203:3000/api/checkEmailExist?email='+ email, { headers: headers })
+    return this.http.get('http://localhost:3000/api/checkEmailExist?email='+ email, { headers: headers })
       .map(res => res.json());
   }
 
@@ -24,7 +24,7 @@ export class AuthenticationService{
     	var dataJson = JSON.stringify(data);
 
     	console.log(dataJson);
-		return this.http.post('http://52.40.15.203:3000/api/authenticate', dataJson, { headers: headers })
+		return this.http.post('http://localhost:3000/api/authenticate', dataJson, { headers: headers })
 		  .map(res => res.json());
 	}
 
@@ -32,19 +32,12 @@ export class AuthenticationService{
     var data = JSON.stringify(data);
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
-
-    return this.http.post('http://52.40.15.203:3000/api/user/signup', data, options)
+    console.log(data);
+    return this.http.post('http://localhost:3000/api/user/signup', data, options)
       .map(res => res.json())
   }
 
-  update(data){
-    var data = JSON.stringify(data);
-    let headers = new Headers({ 'Content-Type': 'application/json' });
-    let options = new RequestOptions({ headers: headers });
 
-    return this.http.put('http://52.40.15.203:3000/api/trainer', data, options)
-      .map(res => res.json());
-  }
 
   uploadAvatar(avartar){
     var data = JSON.stringify(avartar);
@@ -52,7 +45,7 @@ export class AuthenticationService{
     let options = new RequestOptions({ headers: headers });
     console.log("UPLOAD IMAGE");
     console.log(data);
-    return this.http.post('http://52.40.15.203:3000/api/avatarUpload', data, options)
+    return this.http.post('http://localhost:3000/api/avatarUpload', data, options)
       .map(res => res.json());
   }
 }

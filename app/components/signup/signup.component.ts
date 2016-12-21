@@ -70,9 +70,5 @@ export class SignupComponent{
     		this.confirmPasswordCheckFlag = false;
     	}
     }
-	confirmValidator(control){
-		if(control._parent){
-			if(control.value == control._parent.controls.password.value) return null;
-		return {confirm:true}
-	}
+	
 }

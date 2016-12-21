@@ -1,0 +1,36 @@
+<h1>Update Information</h1>
+<section class="user-signup">
+	<div class="container">
+		<form (ngSubmit)="updateUserInformation(form.value)" [ngFormModel]="form">
+			<div class="form-group">
+		    	<label for="firstname">First Name</label>
+		    	<input type="text" ngControl="firstname" class="form-control" id="firstname" placeholder="First Name" #firstname="ngForm">
+		    	<div *ngIf="firstname.errors && firstname.touched" class="error">
+				    You must input your First Name
+				</div>
+		  	</div>
+		  	<div class="form-group">
+			    <label for="lastname">Last Name</label>
+			    <input type="text" ngControl="lastname" class="form-control" id="lastname" placeholder="Last Name" #lastname="ngForm">
+			    <div *ngIf="lastname.errors && lastname.touched" class="error">
+				    You must input your Last Name
+				</div>
+		  	</div>
+		  	<div class="form-group">
+			    <label for="exampleInputEmail1">Quote</label>
+			    <input type="text" ngControl="quote" class="form-control" id="exampleInputEmail1" placeholder="Your Quote" #quote="ngForm">
+			    <div *ngIf="!quote.valid" class="error">
+				    You must input your quote
+				</div>
+		  	</div>
+		  	<div class="form-group">
+			    <label for="exampleInputPassword1">Description</label>
+			    <textarea id="trumbowyg-demo" #description="ngForm" ngControl="description"></textarea>
+			    <div *ngIf="!description.valid  && description.touched" class="error">
+				    You must input your Description
+				</div>
+			</div>
+			<button type="submit" [disabled]="!form.valid" class="btn btn-success pull-right">Submit</button>
+		</form>
+	</div>
+</section>
